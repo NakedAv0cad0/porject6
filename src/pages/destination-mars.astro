@@ -1,0 +1,18 @@
+---
+import Destination from "@layouts/Destination.astro";
+
+import imgSrc from "/public/destination/image-mars.png"
+
+const information = "  Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!"
+
+---
+
+<Destination 
+  {imgSrc}
+  isMars
+  currentElement="mars" 
+  {information}
+  distance="225 mil. km"
+  travelDuration="9 months" >
+
+</Destination>

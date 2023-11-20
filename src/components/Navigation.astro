@@ -1,0 +1,54 @@
+---
+interface Props {
+	isHome?:boolean;
+	isDest?: boolean;
+	isCrew?: boolean;
+	isThech?: boolean;
+}
+const { isHome = false, isDest = false, isCrew = false, isThech = false } = Astro.props as Props;
+---
+
+<header id="header">
+  <svg id="main-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="Group 2">
+    <circle id="Oval" cx="24" cy="24" r="24" fill="white"/>
+    <path id="Path" fill-rule="evenodd" clip-rule="evenodd" d="M24 0C24 0 24 24 0 24C23.5776 24.1714 24 48 24 48C24 48 24 24 48 24C24 24 24 0 24 0Z" fill="#0B0D17"/>
+    </g>
+    </svg>
+    <div id="line" class="toggle"></div>
+    <nav id="nav-bar" class="toggle">
+      <a class:list={["link", {active: isHome}]} href="/"><span class="page-num">00</span>HOME</a>
+      <a class:list={["link", {active: isDest}]} href="/destination-moon"><span class="page-num">01</span>DESTINATION</a>
+      <a class:list={["link", {active: isCrew}]} href="/crew-commander"><span class="page-num">02</span>CREW</a>
+      <a class:list={["link", {active: isThech}]} href="/technology-vehicle"><span class="page-num">03</span>TECHNOLOGY</a>
+      <script is:inline>
+        document.addEventListener('astro:page-load', () => {
+          const icon = document.getElementById("line");
+          const nav = document.getElementById("nav-bar");
+          const links = document.querySelectorAll(".link");
+          document.addEventListener("click", (e) => {
+            const element = e.target;
+            if (element.id === icon.id) {
+              icon.classList.toggle("toggle");
+              nav.classList.toggle("toggle");
+              return
+            };
+            if (element.classList.contains("link")) {
+              links.forEach(link=> {
+                link.classList.remove("active")
+              })
+              element.classList.add("active")
+              document.addEventListener('astro:page-load', () => {
+                links.forEach(link=> {
+                  link.classList.remove("toggle")
+                })
+              })
+              return
+            }
+            icon.classList.add("toggle");
+            nav.classList.add("toggle");
+          });
+        })
+      </script>
+  </nav>					
+</header>

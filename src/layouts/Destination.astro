@@ -1,0 +1,55 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Bg from "@components/Bg.astro";
+import l from "/public/destination/background-destination-desktop.jpg"
+import m from "/public/destination/background-destination-tablet.jpg"
+import s from "/public/destination/background-destination-mobile.jpg"
+import { Image } from "astro:assets";
+interface Porps {
+  imgSrc: any, // the Image element shows an err when I change the type to string
+  currentElement: string,
+  information: string,
+  distance: string,
+  travelDuration: string,
+  isMoon?: boolean,
+  isMars?: boolean,
+  isEuropa?: boolean,
+  isTitan?: boolean,
+}
+const { imgSrc, currentElement, information, distance, travelDuration, isMoon, isMars, isEuropa, isTitan } = Astro.props as Porps;
+---
+
+<Layout title="Destination" isDest>
+  <Bg {l} {m} {s} />
+  <div class="container">
+    <div class="destination">
+      <div class="text">
+        <div class="dist-list">
+          <a class:list={["link", { active:isMoon }]} href="./destination-moon">moon</a>
+          <a class:list={["link", { active:isMars }]} href="./destination-mars">mars</a>
+          <a class:list={["link", { active:isEuropa }]} href="./destination-europa">europa</a>
+          <a class:list={["link", { active:isTitan }]} href="./destination-titan">titan</a>
+        </div>
+        <div class="current-element">{ currentElement }</div>
+        <p class="information">{ information }</p>
+        <div class="extra">
+          <div class="distance">
+            <p>Avg. distance</p>
+            <span>{ distance }</span>
+          </div>
+          <div class="travel-duration">
+            <p>Est. travel time</p>
+            <span>{ travelDuration }</span>
+          </div>
+        </div>
+      </div>
+      <div class="element">
+        <Image src={imgSrc} alt="Element" class="element-img"/>
+        <p class="element-title">
+          <span class="element-num">01</span>
+          Pick your destination
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

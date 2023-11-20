@@ -1,0 +1,234 @@
+@use "../abstracts" as *;
+
+@use "../abstracts" as *;
+
+.technology {
+  margin-top: 4.75rem;
+  width: fit-content;
+  margin-inline: auto;
+  @include d("l") {
+    width: 100%;
+    padding-left: 2rem;
+  }
+  @include d("m") {
+    margin-top: 2.5rem;
+    width: 100%;
+    padding: 0;
+  }
+  @include d("s") {
+    margin-inline: 0;
+  }
+  .element-title {
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    letter-spacing: 0.29531rem;
+    @include d("m") {
+      font-size: 1.25rem;
+      letter-spacing: 0.21094rem;
+      margin-bottom: 3.75rem;
+      padding-left: 2rem;
+    }
+    @include d("s") {
+      font-size: 1rem;
+      letter-spacing: 0.16875rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .element-num {
+      opacity: 0.25;
+      font-weight: 700;
+      width: 100%;
+    }
+  }
+  .holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8.13rem;
+    @include d("l") {
+      justify-content: space-between;
+      gap: 0;
+    }
+    @include d("m") {
+      flex-direction: column-reverse;
+      align-items: stretch;
+      gap: 3.5rem;
+    }
+    @include d("s") {
+      gap: 2.13rem;
+    }
+    .text {
+      display: flex;
+      gap: 5rem;
+      @media (max-width: 1200px) {
+        gap: 1rem;
+      }
+      @include d("m") {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      @include d("s") {
+        gap: 1.62rem;
+      }
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        @include d("m") {
+          flex-direction: row;
+          gap: 1rem;
+        }
+        .step {
+          width: 5rem;
+          aspect-ratio: 1/1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+          font-size: 2rem;
+          letter-spacing: 0.125rem;
+          font-family: $bellefair;
+          color: $white;
+          border: 1px solid rgba($color: #fff, $alpha: 0.25);
+          border-radius: 50%;
+          @include d("m") {
+            width: 3.75rem;
+            font-size: 1.5rem;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 68%;
+            aspect-ratio: 1/1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            outline: 5rem solid rgba($color: #fff, $alpha: 0.25);
+            transition: $delay;
+            z-index: -1;
+            @include d("s") {
+              transition: 0s;
+            }
+          }
+          &:hover::before {
+            width: 100%;
+            transform: translate(-50%, -50%) rotate(180deg);
+          }
+          &.active {
+            color: $dark-blue;
+            border-color: transparent;
+            &::before {
+              width: 0;
+              transform: translate(-50%, -50%) rotate(45deg);
+              outline-color: $white;
+            }
+          }
+        }
+      }
+      .small {
+        color: $light-blue;
+        letter-spacing: 0.16875rem;
+        text-transform: uppercase;
+        margin-bottom: 0.69rem;
+        @include d("m") {
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+        @include d("s") {
+          margin-bottom: 0.56rem;
+        }
+      }
+      .step-name {
+        width: 29.375rem;
+        font-family: $bellefair;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        margin-bottom: 1.06rem;
+        @include d("l") {
+          width: auto;
+        }
+        @include d("m") {
+          font-size: 2.5rem;
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+        @include d("s") {
+          font-size: 1.5rem;
+        }
+      }
+      .information {
+        max-width: 27.75rem;
+        margin-bottom: 7.5rem;
+        font-family: $barlow;
+        font-size: 1.125rem;
+        line-height: 2rem;
+        color: $light-blue;
+        height: 10rem;
+        @include d("m") {
+          max-width: 37rem;
+          margin-bottom: 2.5rem;
+          padding-inline: 1rem;
+          font-size: 1rem;
+          line-height: 1.75rem;
+          text-align: center;
+        }
+        @include d("s") {
+          max-width: 20.4375rem;
+          padding-inline: 0;
+          margin-bottom: 1rem;
+          font-size: 0.9375rem;
+          line-height: 1.5625rem;
+        }
+      }
+      .list {
+        width: 8.25rem;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 1.5rem;
+        @include d("m") {
+          justify-content: center;
+        }
+        @include d("s") {
+          order: -1;
+          margin-bottom: 2rem;
+        }
+        .oval {
+          width: 0.9375rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: $white;
+          opacity: 0.174363;
+          cursor: pointer;
+          transition: $delay;
+          &:hover {
+            opacity: 0.5001;
+          }
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .image {
+      .img-portrait {
+        @media (max-width: 1200px) {
+          width: 24rem;
+        }
+        @include d("m") {
+          display: none;
+        }
+      }
+      .img {
+        display: none;
+        @include d("m") {
+          display: block;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

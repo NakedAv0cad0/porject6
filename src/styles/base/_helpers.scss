@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+// Classes
+.container {
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  color: $red;
+  &.l {
+    @include d("m") {
+      display: none;
+    }
+  }
+  &.m {
+    @include d("s") {
+      display: none;
+    }
+  }
+}

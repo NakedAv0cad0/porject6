@@ -1,0 +1,10 @@
+---
+import { Image } from "astro:assets";
+
+const { s, m, l } = Astro.props
+
+---
+
+<Image src={s} alt={"backgorund"} class="bg s"/>
+<Image src={m} alt={"backgorund"} class="bg m"/>
+<Image src={l} alt={"backgorund"} class="bg l"/>

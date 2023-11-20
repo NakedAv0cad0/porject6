@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Bg from "@components/Bg.astro";
+import l from "/public/home/background-home-desktop.jpg";
+import m from "/public/home/background-home-tablet.jpg";
+import s from "/public/home/background-home-mobile.jpg";
+---
+
+<Layout title="Home" isHome>
+  <div class="container">
+    <Bg {l} {m} {s} />
+    <div id="home">
+      <div class="text">
+        <p class="main-desc">So, you want to travel to</p>
+        <span class="main-big-title">Space</span>
+        <p class="main-desc">
+          Let’s face it; if you want to go to space, you might as well genuinely go to
+          outer space and not hover kind of on the edge of it. Well sit back, and relax
+          because we’ll give you a truly out of this world experience!
+        </p>
+      </div>
+      <a href="/destination-moon" class="oval">Explore</a>
+    </div>
+  </div>
+</Layout>

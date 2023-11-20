@@ -1,0 +1,48 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Bg from "@components/Bg.astro";
+import l from "/public/technology/background-technology-desktop.jpg"
+import m from "/public/technology/background-technology-tablet.jpg"
+import s from "/public/technology/background-technology-mobile.jpg"
+import { Image } from "astro:assets";
+
+interface Porps {
+  imgSrc: any, // the Image element shows an err when I change the type to string
+  imgSrcPortrait: any,
+  information: string,
+  isVehicle?: boolean,
+  isSpaceport?: boolean,
+  isCapsule?: boolean,
+  stepName?: boolean,
+}
+const { imgSrc, imgSrcPortrait, information, isVehicle, isSpaceport, isCapsule, stepName } = Astro.props as Porps
+---
+
+<Layout isThech title="Technology">
+  <Bg {l} {m} {s} />
+  <div class="technology">
+    <p class="element-title">
+      <span class="element-num">03</span>
+      Space launch 101
+    </p>
+    <div class="holder">
+      <div class="text">
+        <div class="steps">
+          <a href="./technology-vehicle" class:list={["step", {active:isVehicle}]}>1</a>
+          <a href="./technology-spaceport" class:list={["step", {active:isSpaceport}]}>2</a>
+          <a href="./technology-capsule" class:list={["step", {active:isCapsule}]}>3</a>
+        </div>
+        <div class="info">
+          <p class="small">the terminology...</p>
+          <div class="step-name">{stepName}</div>
+          <p class="information">{information}</p>
+        </div>
+      </div>
+      <div class="image">
+        <Image src={imgSrc} alt="technology" class="img" />
+        <Image src={imgSrcPortrait} alt="technology" class="img-portrait" />
+      </div>
+    </div>
+    </div>
+  </div>
+</Layout>

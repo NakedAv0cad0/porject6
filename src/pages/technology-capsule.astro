@@ -1,0 +1,16 @@
+---
+import Technology from "@layouts/Technology.astro";
+import imgSrcPortrait from "/public/technology/image-space-capsule-portrait.jpg"
+import imgSrc from "/public/technology/image-space-capsule-landscape.jpg"
+
+const information = "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained."
+---
+
+<Technology 
+  {imgSrc}
+  {imgSrcPortrait}
+  isCapsule
+  {information}
+  stepName="Space capsule"
+  >
+</Technology>

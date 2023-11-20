@@ -1,0 +1,47 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Bg from "@components/Bg.astro";
+import l from "/public/crew/background-crew-desktop.jpg"
+import m from "/public/crew/background-crew-tablet.jpg"
+import s from "/public/crew/background-crew-mobile.jpg"
+import { Image } from "astro:assets";
+interface Porps {
+  imgSrc: any, // the Image element shows an err when I change the type to string
+  role: string,
+  workerName: string,
+  information: string,
+  isCommander?: boolean,
+  isMissionSpeacialist?: boolean,
+  isPilot?: boolean,
+  isFlightEngineer?: boolean,
+}
+
+const { imgSrc, role, workerName, information, isCommander, isMissionSpeacialist, isPilot, isFlightEngineer } = Astro.props as Porps;
+---
+
+<Layout isCrew title="Crew">
+  <Bg {l} {m} {s} />
+  <div class="container">
+    <div class="crew">
+      <p class="element-title">
+        <span class="element-num">02</span>
+        Pick your destination
+      </p>
+      <div class="holder">
+        <div class="text">
+          <p class="role">{ role }</p>
+          <div class="name">{ workerName }</div>
+          <p class="information">{ information }</p>
+          <div class="list">
+            <a href="./crew-commander" class:list={["oval", {active : isCommander}]}></a>
+            <a href="./crew-specialist" class:list={["oval", {active : isMissionSpeacialist}]}></a>
+            <a href="./crew-pilot" class:list={["oval", {active : isPilot}]}></a>
+            <a href="./crew-engineer" class:list={["oval", {active : isFlightEngineer}]}></a>
+          </div>          
+        </div>
+        <Image src={imgSrc} alt="crew" class="worker-img" />
+      </div>
+      </div>
+    </div>
+  </div>
+</Layout>

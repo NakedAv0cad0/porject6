@@ -1,0 +1,119 @@
+@use "../abstracts" as *;
+
+#home {
+  margin-top: 15.69rem;
+  display: flex;
+  justify-content: center;
+  gap: 24.47rem;
+  align-items: end;
+  @include d("l") {
+    margin-inline: 5rem;
+    gap: 0;
+    justify-content: space-between;
+  }
+  @include d("m") {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6.62rem;
+    height: 100%;
+    gap: 9.75rem;
+  }
+  @include d("s") {
+    margin-top: 3rem;
+    gap: 4.06rem; /* it supposed to be 5.06rem but it's not fit with xs screen devices */
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    max-width: 27.81rem;
+    p {
+      color: $light-blue;
+      font-weight: 400;
+    }
+    p:first-of-type {
+      font-family: $barlow-condensed;
+      font-size: 1.75rem;
+      letter-spacing: 0.29531rem;
+      text-transform: uppercase;
+      @include d("m") {
+        font-size: 1.25rem;
+        letter-spacing: 0.21094rem;
+        text-align: center;
+      }
+      @include d("s") {
+        font-size: 1rem;
+        letter-spacing: 0.16875rem;
+      }
+    }
+    P:last-of-type {
+      font-family: $barlow;
+      font-size: 1.125rem;
+      line-height: 2rem;
+      @include d("m") {
+        font-size: 1rem;
+        text-align: center;
+      }
+      @include d("s") {
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
+      }
+    }
+  }
+  .main-big-title {
+    font-size: 9.375rem;
+    color: $white;
+    font-family: Bellefair;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-block: 1.5rem;
+    @include d("s") {
+      font-size: 5rem;
+      text-align: center;
+    }
+  }
+  .oval {
+    position: relative;
+    width: 17.125rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $white;
+    color: $dark-blue;
+    font-family: $bellefair;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    @include d("m") {
+      width: 15.125rem;
+    }
+    @include d("s") {
+      font-size: 1.25rem;
+      width: 9.375rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: $white;
+      opacity: 0.1036;
+      transition: $delay;
+    }
+    &:hover::before {
+      width: calc(100% + 11rem);
+      height: calc(100% + 11rem);
+      @include d("s") {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}

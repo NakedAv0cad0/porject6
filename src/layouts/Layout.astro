@@ -1,0 +1,24 @@
+---
+interface Props {
+	title?: string;
+	isHome?:boolean;
+	isDest?: boolean;
+	isCrew?: boolean;
+	isThech?: boolean;
+}
+
+const { title, isHome = false, isDest = false, isCrew = false, isThech = false } = Astro.props as Props;
+
+import Head from "@components/Head.astro";
+import Navigation from "@components/Navigation.astro";
+import "../styles/style.scss"
+---
+
+<!doctype html>
+<html lang="en">
+	<Head {title}/>
+	<body>
+		<Navigation {isHome} {isCrew} {isDest} {isThech}/>
+		<slot/>
+	</body>
+</html>

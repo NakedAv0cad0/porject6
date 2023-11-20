@@ -1,0 +1,16 @@
+---
+import Technology from "@layouts/Technology.astro";
+import imgSrcPortrait from "/public/technology/image-spaceport-portrait.jpg"
+import imgSrc from "/public/technology/image-spaceport-landscape.jpg"
+
+const information = "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch."
+---
+
+<Technology 
+  {imgSrc}
+  {imgSrcPortrait}
+  isSpaceport
+  {information}
+  stepName="Spaceport"
+  >
+</Technology>

@@ -1,0 +1,170 @@
+@use "../abstracts" as *;
+
+.destination {
+  margin-top: 4.75rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 9.81rem;
+  @include d("m") {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 3.31rem;
+    padding-inline: 2.44rem;
+    margin-top: 2.5rem;
+  }
+  @include d("s") {
+    margin-top: 1.5rem;
+    padding-inline: 1rem;
+  }
+  .element {
+    display: flex;
+    flex-direction: column-reverse;
+    align-self: stretch;
+    gap: 6.06rem;
+    @include d("m") {
+      gap: 3.75rem;
+    }
+    @include d("s") {
+      gap: 2rem;
+      align-items: center;
+    }
+    .element-img {
+      @include d("m") {
+        width: 18.75rem;
+        height: 18.75rem;
+        align-self: center;
+      }
+      @include d("s") {
+        width: 10.625rem;
+        height: 10.625rem;
+      }
+    }
+    .element-title {
+      text-transform: uppercase;
+      font-size: 1.75rem;
+      letter-spacing: 0.29531rem;
+      @include d("m") {
+        font-size: 1.25rem;
+        letter-spacing: 0.21094rem;
+      }
+      @include d("s") {
+        font-size: 1rem;
+        letter-spacing: 0.16875rem;
+      }
+      .element-num {
+        opacity: 0.25;
+        font-weight: 700;
+        width: 100%;
+      }
+    }
+  }
+  .text {
+    @include d("m") {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .dist-list {
+      display: flex;
+      gap: 2.19rem;
+      @include d("s") {
+        gap: 1.63rem;
+      }
+      .link {
+        text-transform: uppercase;
+        letter-spacing: 0.16875rem;
+        color: $light-blue;
+        padding-bottom: 0.75rem;
+        position: relative;
+        @include d("s") {
+          font-size: 0.875rem;
+          letter-spacing: 0.14763rem;
+          padding-bottom: 0.5rem;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 100%;
+          width: 100%;
+          height: 0.1875rem;
+          background-color: $white;
+          opacity: 0;
+          transition: $delay;
+          @include d("s") {
+            transition: 0;
+          }
+        }
+        &:hover::before {
+          opacity: 0.5;
+        }
+        &.active::before {
+          opacity: 1;
+        }
+      }
+    }
+    .current-element {
+      margin-block: 2.31rem 0.87rem;
+      text-transform: uppercase;
+      font-size: 6.25rem;
+      font-family: $bellefair;
+      @include d("m") {
+        font-size: 5rem;
+        margin-block: 2rem 0.5rem;
+      }
+      @include d("s") {
+        font-size: 3.5rem;
+      }
+    }
+    .information {
+      max-width: 27.75rem;
+      font-size: 1.125rem;
+      line-height: 2rem;
+      color: $light-blue;
+      font-family: $barlow;
+      padding-bottom: 3.38rem;
+      margin-bottom: 1.75rem;
+      border-bottom: 0.0625rem solid #383b4b;
+      @include d("m") {
+        max-width: 35.8125rem;
+        line-height: 1.75rem;
+        font-size: 1rem;
+        text-align: center;
+        padding-bottom: 3.06rem;
+      }
+      @include d("s") {
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        max-width: 20.4375rem;
+      }
+    }
+    .extra {
+      display: flex;
+      align-items: center;
+      gap: 4.94rem;
+      @include d("s") {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 1rem;
+      }
+      * {
+        text-transform: uppercase;
+        @include d("m") {
+          text-align: center;
+        }
+      }
+      p {
+        color: $light-blue;
+        font-size: 0.875rem;
+        letter-spacing: 0.14763rem;
+        margin-bottom: 0.75rem;
+      }
+      span {
+        font-family: $bellefair;
+        font-size: 1.75rem;
+      }
+    }
+  }
+}

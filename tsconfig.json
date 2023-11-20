@@ -1,0 +1,28 @@
+// {
+//   "compilerOptions": {
+//     "target": "ES5",
+//     "allowJs": true,
+//     "outDir": "js",
+//     "lib": ["ES7", "DOM"],
+//     "plugins": [
+//       {
+//         "name": "@astrojs/ts-plugin"
+//       }
+//     ]
+//   },
+//   "extends": "astro/tsconfigs/strict"
+// }
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"]
+    },
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ]
+  }
+}

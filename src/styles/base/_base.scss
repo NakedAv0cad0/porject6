@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+// Base
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+// https://mcdn.wallpapersafari.com/medium/65/40/nQHyb7.jpg
+body {
+  color: $white;
+  background-color: rgb(11, 35, 68);
+  font-family: $barlow-condensed;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}

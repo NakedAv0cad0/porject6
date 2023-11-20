@@ -1,0 +1,15 @@
+---
+import Crew from "@layouts/Crew.astro";
+import imgSrc from "/public/crew/image-douglas-hurley.png"
+
+const information = "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
+---
+
+<Crew 
+  {imgSrc}
+  role="commander"
+  workerName="Douglas Hurley"
+  {information}
+  isCommander
+  >
+</Crew>

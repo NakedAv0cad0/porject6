@@ -1,0 +1,19 @@
+---
+import Destination from "@layouts/Destination.astro";
+
+import imgSrc from "/public/destination/image-titan.png"
+
+const information = "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn."
+
+---
+
+<Destination 
+  {imgSrc}
+  isTitan
+  currentElement="titan" 
+  {information}
+  distance="1.6 bil. km"
+  travelDuration="7 years" >
+
+</Destination>
+  

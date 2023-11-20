@@ -1,0 +1,164 @@
+@use "../abstracts" as *;
+
+.crew {
+  margin-top: 0.27rem;
+  width: fit-content;
+  margin-inline: auto;
+  @include d("l") {
+    padding-inline: 2rem;
+    width: 100%;
+  }
+  @include d("s") {
+    margin-inline: 0;
+  }
+  @include d("m") {
+    margin-top: 2.5rem;
+    width: auto;
+  }
+  .element-title {
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    letter-spacing: 0.29531rem;
+    transform: translateY(100%);
+    @include d("m") {
+      font-size: 1.25rem;
+      letter-spacing: 0.21094rem;
+      transform: translateY(0);
+      margin-bottom: 3.75rem;
+    }
+    @include d("s") {
+      font-size: 1rem;
+      letter-spacing: 0.16875rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .element-num {
+      opacity: 0.25;
+      font-weight: 700;
+      width: 100%;
+    }
+  }
+  .holder {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5.64rem;
+    @include d("l") {
+      justify-content: space-between;
+      width: 100%;
+      gap: 0;
+    }
+    @include d("m") {
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    @include d("s") {
+      flex-direction: column-reverse;
+      gap: 2.06rem;
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      justify-content: flex-start;
+      .role {
+        font-family: $bellefair;
+        font-size: 2rem;
+        text-transform: uppercase;
+        opacity: 0.5042;
+        margin-bottom: 0.94rem;
+        @include d("m") {
+          font-size: 1.5rem;
+          text-align: center;
+          margin-bottom: 0.5rem;
+        }
+        @include d("s") {
+          font-size: 1rem;
+        }
+      }
+      .name {
+        width: 38.375rem;
+        font-family: $bellefair;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        margin-bottom: 1.69rem;
+        @include d("l") {
+          width: auto;
+        }
+        @include d("m") {
+          font-size: 2.5rem;
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+        @include d("s") {
+          font-size: 1.5rem;
+        }
+      }
+      .information {
+        max-width: 27.75rem;
+        margin-bottom: 7.5rem;
+        font-family: $barlow;
+        font-size: 1.125rem;
+        line-height: 2rem;
+        color: $light-blue;
+        height: 10rem;
+        @include d("m") {
+          max-width: 37rem;
+          margin-bottom: 2.5rem;
+          font-size: 1rem;
+          line-height: 1.75rem;
+          text-align: center;
+          height: auto;
+        }
+        @include d("s") {
+          font-size: 0.9375rem;
+          line-height: 1.5625rem;
+          max-width: 20.4375rem;
+          margin-bottom: 0;
+        }
+      }
+      .list {
+        width: 8.25rem;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 1.5rem;
+        @include d("m") {
+          justify-content: center;
+        }
+        @include d("s") {
+          order: -1;
+          margin-bottom: 2rem;
+        }
+        .oval {
+          width: 0.9375rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: $white;
+          opacity: 0.174363;
+          cursor: pointer;
+          transition: $delay;
+          &:hover {
+            opacity: 0.5001;
+          }
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .worker-img {
+      width: 35.5045rem;
+      height: 44.5rem;
+      @include d("m") {
+        width: 28.52325rem;
+        height: 35.75rem;
+      }
+      @include d("s") {
+        width: 11.07019rem;
+        height: 13.875rem;
+      }
+    }
+  }
+}
