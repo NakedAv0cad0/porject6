@@ -14,14 +14,24 @@
   height: 100%;
   z-index: -1;
   color: $red;
-  &.l {
-    @include d("m") {
+  &.m,
+  &.s {
+    display: none;
+  }
+  @include d("m") {
+    &.l {
       display: none;
     }
+    &.m {
+      display: block;
+    }
   }
-  &.m {
-    @include d("s") {
+  @include d("s") {
+    &.m {
       display: none;
+    }
+    &.s {
+      display: block;
     }
   }
 }
